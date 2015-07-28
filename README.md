@@ -11,6 +11,14 @@ Install bower components and collect main files.
 [![npm version][my_npm_budge_url]][my_npm_url]
 
 
+What's this?
+-----
+
+Wrapper utility for `bower install`.
+bower is great, but when installing, it downloads entire repositories and you need to find files your own.
+Really annoying.
+
+So here is handybower, which calls `bower install` and collect main files automatically.
 
 
 Installation
@@ -32,7 +40,9 @@ handybower([
 ], {
     dest: "src/third_party" // Dirname to save files.
 }, function (err) {
-
+    // Will generate:
+    // - src/third_party/jquery.js
+    // - src/third_party/angular.js
 });
 ```
 

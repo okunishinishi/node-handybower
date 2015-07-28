@@ -9,3 +9,7 @@ before_script:
 script:
 - npm run test
 - npm run cover
+- npm run report
+env:
+  global:
+    secure: V8Hj2qa4PNv2Ol6H+Oksc8Qq2bSadDwMDmvP4nXAZ+D5f+c4qA99GE2u9I6j+YwIzA/Fp/E3Y9Vm+XIR1idN4i5PrJ0LNllpq/D718wEdPJWMLefuKLl1gxvVgpNLk5yrRylEfVCtZgYKMK/u9wWb3qWWXswxGACOL6D8Jz5TXt+a5pxJGtlBaB5iImpmJ8GfeL9EGs16+YulXP5jynNBL+fqq54E1ijeq0OjyeDftI3gh83Vc+egUNioQ2JlU1ys39XpWe4kpp+2ZGOjKDMU9+odPHEqhdBhSkaNz17YFw6o8+oxN4m2p59BbjOchH150AbvV4y7Nphx9apyiP7rRj+AusrBH+XmBeXEsGNKZwbE5+1jwOUeSpDK/DP4bi3UIKcmQ5H88vKjr3trCvuPQfGSBRy4gRornFiwvQDxqZV62wV0iG444/Hb9V9huSmNoV2T9LKpszzWbVfbrc5y8XSMDjSZfE2UCyzwINXkWgo/CNyU3M5HO3weiNSGd1Q68apRm4WWguHSU1rPEHoS9tAR7g/6Y4P/IJlFerRV+E0xa3YbS4Dvl6nzUnPtP42crg4/4aH9hu8XEtq7KHcDfO1nhzb2hM9Kw4/0lausBbqG5T8Kvuf/+raWnp1q2z4fdrKZi+Y0jkWb+q44Kg0Ig9uquVt+2L+wy3HW/uIawE=
