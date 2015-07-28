@@ -1,0 +1,27 @@
+#!/usr/bin/env node
+
+/**
+ * @file Bins script for handybower.
+ */
+
+"use strict";
+
+
+var program = require('commander'),
+    pkg = require('../package'),
+    handybower = require('../handybower');
+
+
+program
+    .usage('[options] <name ...>')
+    .version(pkg['version'])
+    .option('-d, --dest <dest>', "Destination directory path.")
+    .option('-v, --verbose', "Show verbose log.")
+    .parse(process.argv);
+
+
+handybower(program.args, {
+    verbose: program.verbose,
+    dest: program.dest,
+    main: program.main && (program.main).split(/,/g)
+});
