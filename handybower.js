@@ -24,7 +24,16 @@ function handyBower(names, options, callback) {
     var args = argx(arguments);
     callback = args.pop('function') || argx.noop;
     options = args.pop('object');
-    names = args.remain().reduce(_concat, []).map(String);
+    names = args.remain().reduce(_concat, []).map(function (name) {
+        if (typeof(name) === 'object') {
+            var data = name;
+            return Object.keys(data).map(function (name) {
+                return [name, data[name]].join('#');
+            });
+        } else {
+            return String(name);
+        }
+    }).reduce(_concat, []);
 
     var logger = new Colorprint({
         PREFIX: '[handybower] '
@@ -46,6 +55,7 @@ function handyBower(names, options, callback) {
     var aborted = false;
 
     var components = {};
+    logger.info('Installing started...');
     bower.commands
         .install(names, {
             force: true
@@ -99,7 +109,14 @@ function handyBower(names, options, callback) {
                         }
                     ], callback);
                 }, callback);
-            }, callback);
+            }, function (err) {
+                if (err) {
+                    logger.error('...installing failed!');
+                } else {
+                    logger.info('...installing done!');
+                }
+                callback(err);
+            });
         });
 }
 

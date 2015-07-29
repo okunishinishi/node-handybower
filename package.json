@@ -1,6 +1,6 @@
 {
   "name": "handybower",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Install bower components and collect main files.",
   "main": "handybower.js",
   "bin": {
