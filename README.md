@@ -53,7 +53,7 @@ Using CLI
 Install as global module.
 
 ```bash
-$ npm install handybower --g
+$ npm install handybower -g
 ```
 
 Install via CLI.
