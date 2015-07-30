@@ -16,6 +16,7 @@ var argx = require('argx'),
     writeout = require('writeout'),
     fs = require('fs'),
     path = require('path'),
+    glob = require('glob'),
     async = require('async'),
     bower = require('bower'),
     Colorprint = require('colorprint/lib/colorprint');
@@ -40,7 +41,9 @@ function handyBower(names, options, callback) {
     });
 
     var verbose = !!options.verbose,
-        main = [].concat(options.main || '').reduce(_concat, []).filter(_notEmpty);
+        main = [].concat(options.main || '')
+            .reduce(_concat, [])
+            .filter(_notEmpty);
 
     if (verbose) {
         logger.trace('options:\n', options);
@@ -84,7 +87,9 @@ function handyBower(names, options, callback) {
             });
             async.eachSeries(dirnames, function (dirname, callback) {
                 var data = require(path.resolve(dirname, 'bower.json'));
-                var found = [].concat(main && main.length ? main : data.main);
+                var found = [].concat(main && main.length ? main : data.main).map(function (pattern) {
+                    return glob.sync(pattern, {cwd: dirname});
+                }).reduce(_concat, []);
                 if (verbose) {
                     logger.trace('main files:\n%s', found);
                 }
@@ -111,6 +116,7 @@ function handyBower(names, options, callback) {
                 }, callback);
             }, function (err) {
                 if (err) {
+                    console.error(err);
                     logger.error('...installing failed!');
                 } else {
                     logger.info('...installing done!');

@@ -31,7 +31,7 @@ exports['From cli.'] = function (test) {
 };
 
 exports['Handy bower.'] = function (test) {
-    handybower(['jquery', 'angular'], {
+    handybower(['ionicons', 'angular'], {
         dest: 'tmp/testing_bowermains',
         verbose: true
     }, function (err) {
