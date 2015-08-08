@@ -13,12 +13,12 @@
 
 
 var argx = require('argx'),
-    writeout = require('writeout'),
     fs = require('fs'),
     path = require('path'),
     glob = require('glob'),
     async = require('async'),
     bower = require('bower'),
+    filecopy = require('filecopy'),
     Colorprint = require('colorprint/lib/colorprint');
 
 function handyBower(names, options, callback) {
@@ -97,19 +97,14 @@ function handyBower(names, options, callback) {
                     var src = path.resolve(dirname, filename),
                         dest = path.resolve(destDir, path.basename(filename));
 
-                    async.waterfall([
+                    async.series([
                         function (callback) {
-                            fs.readFile(src, callback);
-                        },
-                        function (content, callback) {
-                            writeout(dest, String(content), {
+                            filecopy(src, dest, {
                                 mkdirp: true
                             }, callback);
                         },
-                        function (result, callback) {
-                            if (!result.skipped) {
-                                logger.debug('File generated:', dest);
-                            }
+                        function (callback) {
+                            logger.debug('File generated:', dest);
                             callback(null);
                         }
                     ], callback);
@@ -127,7 +122,7 @@ function handyBower(names, options, callback) {
 }
 
 function _concat(a, b) {
-    return a.concat(b);
+    return [].concat(a).concat(b);
 }
 function _notEmpty(val) {
     return !!val;

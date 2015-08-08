@@ -1,17 +1,16 @@
 {
   "name": "handybower",
-  "version": "1.1.1",
+  "version": "1.2.1",
   "description": "Install bower components and collect main files.",
   "main": "handybower.js",
   "bin": {
     "handybower": "bin/handybower"
   },
   "scripts": {
-    "test": "nodeunit handybower_test.js",
-    "cover": "istanbul cover nodeunit handybower_test.js --dir coverage",
-    "report": "codeclimate-test-reporter  < coverage/lcov.info",
-    "versionup": "versionup",
-    "taggit": "taggit"
+    "build": "./ci/build.js",
+    "test": "./ci/test.js",
+    "cover": "./ci/cover.js",
+    "report": "./ci/report.js"
   },
   "repository": {
     "type": "git",
@@ -22,18 +21,24 @@
     "handy",
     "components"
   ],
-  "author": "Taka Okunishi",
+  "author": {
+    "name": "Taka Okunishi",
+    "url": "http://okunishitaka.com"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/okunishinishi/node-handybower/issues"
   },
   "homepage": "https://github.com/okunishinishi/node-handybower#readme",
   "devDependencies": {
-    "codeclimate-test-reporter": "0.1.0",
-    "istanbul": "^0.3.17",
-    "nodeunit": "^0.9.1",
-    "taggit": "^1.0.3",
-    "versionup": "^1.0.7"
+    "ape-covering": "^1.0.8",
+    "ape-releasing": "^1.0.14",
+    "ape-reporting": "^1.0.8",
+    "ape-tasking": "^1.0.6",
+    "ape-testing": "^1.1.6",
+    "ape-tmpl": "^1.0.3",
+    "ape-updating": "^1.0.1",
+    "coz": "^1.5.0"
   },
   "dependencies": {
     "argx": "^1.1.5",
@@ -41,6 +46,7 @@
     "bower": "^1.4.1",
     "colorprint": "^1.1.1",
     "commander": "^2.8.1",
+    "filecopy": "^1.0.3",
     "glob": "^5.0.14",
     "writeout": "^1.0.4"
   }
