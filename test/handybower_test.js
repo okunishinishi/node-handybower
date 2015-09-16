@@ -8,8 +8,8 @@
 "use strict";
 
 var childProcess = require('child_process'),
-    handybower = require('./handybower'),
-    handybowerBin = require.resolve('./bin/handybower');
+    handybower = require('../lib/handybower'),
+    handybowerBin = require.resolve('../bin/handybower');
 
 exports['From cli.'] = function (test) {
     var command = [

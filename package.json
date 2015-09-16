@@ -1,8 +1,8 @@
 {
   "name": "handybower",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "Install bower components and collect main files.",
-  "main": "handybower.js",
+  "main": "lib",
   "bin": {
     "handybower": "bin/handybower"
   },
@@ -12,10 +12,7 @@
     "cover": "./ci/cover.js",
     "report": "./ci/report.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/okunishinishi/node-handybower.git"
-  },
+  "repository": "okunishinishi/node-handybower",
   "keyword": [
     "bower",
     "handy",
@@ -32,22 +29,23 @@
   "homepage": "https://github.com/okunishinishi/node-handybower#readme",
   "devDependencies": {
     "ape-covering": "^1.0.8",
-    "ape-releasing": "^1.0.14",
-    "ape-reporting": "^1.0.8",
-    "ape-tasking": "^1.0.6",
-    "ape-testing": "^1.1.6",
-    "ape-tmpl": "^1.0.3",
+    "ape-releasing": "^1.0.16",
+    "ape-reporting": "^1.0.9",
+    "ape-tasking": "^1.0.7",
+    "ape-testing": "^1.3.2",
+    "ape-tmpl": "^1.3.4",
     "ape-updating": "^1.0.1",
-    "coz": "^1.5.0"
+    "coz": "^3.0.15",
+    "coz-tmpl": "^1.0.4"
   },
   "dependencies": {
-    "argx": "^1.1.5",
-    "async": "^1.4.0",
-    "bower": "^1.4.1",
-    "colorprint": "^1.1.1",
+    "argx": "^1.3.0",
+    "async": "^1.4.2",
+    "bower": "^1.5.2",
+    "colorprint": "^1.1.2",
     "commander": "^2.8.1",
-    "filecopy": "^1.0.3",
+    "filecopy": "^1.0.5",
     "glob": "^5.0.14",
-    "writeout": "^1.0.4"
+    "writeout": "^1.2.1"
   }
 }

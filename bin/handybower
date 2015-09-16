@@ -9,7 +9,7 @@
 
 var program = require('commander'),
     pkg = require('../package'),
-    handybower = require('../handybower');
+    handybower = require('../lib');
 
 
 program

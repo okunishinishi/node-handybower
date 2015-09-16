@@ -20,6 +20,7 @@ handybower
 [bd_gemnasium_shield_url]: https://gemnasium.com/okunishinishi/node-handybower.svg
 [bd_npm_url]: http://www.npmjs.org/package/handybower
 [bd_npm_shield_url]: http://img.shields.io/npm/v/handybower.svg?style=flat
+[bd_bower_badge_url]: https://img.shields.io/bower/v/handybower.svg?style=flat
 
 <!-- Badge End -->
 
@@ -33,9 +34,13 @@ Install bower components and collect main files.
 
 
 
+
 <!-- Sections Start -->
 <a name="sections"></a>
 
+<!-- Section from "doc/readme/00-WhatsThis.md.hbs" Start -->
+
+<a name="section-doc-readme-00-whats-this-md"></a>
 What's This?
 -----
 
@@ -45,6 +50,11 @@ Really annoying.
 
 So here is handybower, which calls `bower install` and collect main files automatically.
 
+<!-- Section from "doc/readme/00-WhatsThis.md.hbs" End -->
+
+<!-- Section from "doc/readme/01-Installation.md.hbs" Start -->
+
+<a name="section-doc-readme-01-installation-md"></a>
 Installation
 -----
 
@@ -52,6 +62,11 @@ Installation
 npm install handybower --save
 ```
 
+<!-- Section from "doc/readme/01-Installation.md.hbs" End -->
+
+<!-- Section from "doc/readme/02-Usage.md.hbs" Start -->
+
+<a name="section-doc-readme-02-usage-md"></a>
 Usage
 -------
 
@@ -70,6 +85,11 @@ handybower([
 });
 ```
 
+<!-- Section from "doc/readme/02-Usage.md.hbs" End -->
+
+<!-- Section from "doc/readme/03-CLI.md.hbs" Start -->
+
+<a name="section-doc-readme-03-c-l-i-md"></a>
 From CLI
 -----
 
@@ -84,6 +104,8 @@ Install via CLI.
 ```bash
 $ handybower -d src/third_party jquery angular#1.4.3
 ```
+<!-- Section from "doc/readme/03-CLI.md.hbs" End -->
+
 
 <!-- Sections Start -->
 
