@@ -85,6 +85,13 @@ handybower([
 });
 ```
 
+### Options
+
+| Key | Description | Default |
+| --- | ---- | --- |
+| dest | Destination directory path. | 'handybower_components' |
+| verbose | Log verbose | false |
+| main | Name of main files. | _detectFromBowerJson() |
 <!-- Section from "doc/readme/02-Usage.md.hbs" End -->
 
 <!-- Section from "doc/readme/03-CLI.md.hbs" Start -->
